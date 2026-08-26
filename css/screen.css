@@ -903,6 +903,9 @@ header {
   z-index: 2001;
   margin-bottom: 5px;
 }
+body:not(.dark-mode) header {
+  box-shadow: #00b39f 1px -27px 57px;
+}
 header.header-shadow {
   box-shadow: #00b39f 1px -27px 57px;
   transition: background-color 0.2s ease;
@@ -927,6 +930,7 @@ header .project-name a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  touch-action: manipulation;
 }
 header .project-name img {
   display: block;
@@ -1794,6 +1798,10 @@ table.adapters img.adapter-logo {
   display: flex;
   align-self: flex-start;
 }
+.blog-post .post-content img {
+  max-width: 100%;
+  height: auto;
+}
 .blog-post .post-content .button {
   margin: 30px 0 0 0;
 }
@@ -2088,10 +2096,12 @@ a.nav-text:hover {
 }
 
 .nav-img {
-  width: 2rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
   filter: var(--image-filter-light);
-  padding-left: 0.5rem;
+  margin-left: 0.5rem;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .menu-toggle {
@@ -2802,17 +2812,16 @@ p {
 }
 
 .import-brand-secondary {
-  background-color: var(--brand-color-secondary);
+  background-color: var(--brand-color-primary);
 }
 
 .import-brand-secondary:hover {
-  background-color: var(--brand-color-tertiary);
+  background-color: var(--brand-color-secondary);
 }
 
 .import-brand-tertiary {
-  background-color: transparent;
-  color: var(--brand-color-tertiary);
-  border: 1px solid var(--brand-color-tertiary);
+  background-color: var(--brand-color-primary);
+  color: white;
 }
 
 .import-brand-tertiary:hover {
@@ -2911,6 +2920,16 @@ p {
   box-shadow: none;
   background-color: transparent;
   color: var(--color-secondary-medium);
+}
+
+.chip.PERFORMANCE {
+  background-color: var(--brand-color-primary);
+  box-shadow: 0px 1px 2px var(--brand-color-primary);
+}
+.chip.PERFORMANCE .pattern-type {
+  box-shadow: none;
+  background-color: transparent;
+  color: var(--text-color-primary-fixed);
 }
 
 .category-label {
@@ -4104,6 +4123,7 @@ label {
 .single-page h4 {
   font-weight: bold;
   background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light-dark);
   padding: 0.45rem;
   width: 100%;
 }
